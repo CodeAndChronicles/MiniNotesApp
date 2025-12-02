@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 MiniNotes Pro Max - تسجيل الدخول</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS الأساسي ===== */
+        :root {
+            --primary: #8B5CF6;
+            --primary-light: #A78BFA;
+            --primary-dark: #7C3AED;
+            --secondary: #10B981;
+            --secondary-light: #34D399;
+            --danger: #EF4444;
+            --warning: #F59E0B;
+            --info: #3B82F6;
+            --light: #F8FAFC;
+            --dark: #1E293B;
+            --gray: #64748B;
+            --border: #E2E8F0;
+            --success: #10B981;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: 'Cairo', 'Almarai', 'Tajawal', sans-serif;
+        }
+        
+        /* ===== شاشة التحميل ===== */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-logo {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .loading-logo i {
+            font-size: 60px;
+            color: white;
+        }
+        
+        .loading-text {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Almarai', sans-serif;
+        }
+        
+        .loading-bar {
+            width: 300px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), var(--info));
+            width: 0%;
+            border-radius: 3px;
+            animation: loading 2s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; left: 0; }
+            50% { width: 100%; left: 0; }
+            100% { width: 0%; left: 100%; }
+        }
+        
+        /* ===== كارد المصادقة ===== */
+        .auth-container {
+            width: 100%;
+            max-width: 480px;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .auth-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-xl);
+            padding: 50px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* ===== الهيدر ===== */
+        .auth-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .auth-logo {
+            margin-bottom: 30px;
+        }
+        
+        .auth-logo i {
+            font-size: 64px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .auth-logo h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-family: 'Almarai', sans-serif;
+        }
+        
+        .auth-logo p {
+            color: var(--gray);
+            font-size: 16px;
+        }
+        
+        /* ===== التبويبات ===== */
+        .auth-tabs {
+            display: flex;
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 6px;
+            margin-bottom: 30px;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            background: none;
+            color: var(--gray);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .auth-tab:hover {
+            color: var(--primary);
+        }
+        
+        .auth-tab.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* ===== النماذج ===== */
+        .auth-form {
+            display: none;
+            animation: slideUp 0.3s ease;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--dark);
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .form-input.error {
+            border-color: var(--danger);
+        }
+        
+        .form-input.success {
+            border-color: var(--success);
+        }
+        
+        .error-message {
+            color: var(--danger);
+            font-size: 12px;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .success-message {
+            color: var(--success);
+            font-size: 12px;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .password-input {
+            position: relative;
+        }
+        
+        .password-input .show-password {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 20px;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* ===== مؤشر قوة كلمة المرور ===== */
+        .password-strength {
+            margin-top: 8px;
+        }
+        
+        .strength-bar {
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+        
+        .strength-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .strength-text {
+            font-size: 12px;
+            color: var(--gray);
+            text-align: left;
+        }
+        
+        /* ===== الأزرار ===== */
+        .auth-btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            margin-bottom: 16px;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .auth-btn.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .auth-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+        
+        .auth-btn.primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .auth-btn.secondary {
+            background: var(--light);
+            color: var(--gray);
+            border: 1px solid var(--border);
+        }
+        
+        .auth-btn.secondary:hover {
+            background: #E2E8F0;
+        }
+        
+        /* ===== الفواصل ===== */
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            margin: 24px 0;
+            color: #94A3B8;
+            font-size: 14px;
+        }
+        
+        .auth-divider::before,
+        .auth-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        
+        .auth-divider span {
+            padding: 0 16px;
+        }
+        
+        /* ===== الاتفاقية ===== */
+        .auth-agreement {
+            text-align: center;
+            margin-top: 24px;
+            color: var(--gray);
+            font-size: 14px;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .auth-agreement a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .auth-agreement a:hover {
+            text-decoration: underline;
+        }
+        
+        /* ===== الفوتر ===== */
+        .auth-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: #94A3B8;
+            font-size: 14px;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        /* ===== Alert ===== */
+        .alert {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            max-width: 400px;
+            padding: 18px 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            animation: slideInRight 0.3s ease, slideOutRight 0.3s ease 3s forwards;
+            border-left: 4px solid;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .alert-success {
+            background: var(--success);
+            color: white;
+            border-left-color: #059669;
+        }
+        
+        .alert-error {
+            background: var(--danger);
+            color: white;
+            border-left-color: #DC2626;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOutRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .auth-card {
+                padding: 30px;
+            }
+            
+            .auth-logo h1 {
+                font-size: 28px;
+            }
+            
+            .auth-logo i {
+                font-size: 48px;
+            }
+            
+            .auth-tab {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 24px;
+            }
+            
+            .auth-logo h1 {
+                font-size: 24px;
+            }
+            
+            .auth-tab {
+                flex-direction: column;
+                font-size: 13px;
+            }
+            
+            .auth-tab span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-logo">
+            <i class="ri-sticky-note-fill"></i>
+        </div>
+        <div class="loading-text">جاري التحميل...</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+    
+    <!-- Auth Container -->
+    <div class="auth-container" style="display: none;">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <i class="ri-sticky-note-fill"></i>
+                    <h1>MiniNotes Pro Max</h1>
+                    <p>ملاحظاتك الذكية في كل مكان</p>
+                </div>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">
+                    <i class="ri-login-box-line"></i>
+                    <span>تسجيل الدخول</span>
+                </button>
+                <button class="auth-tab" data-tab="signup">
+                    <i class="ri-user-add-line"></i>
+                    <span>إنشاء حساب</span>
+                </button>
+            </div>
+            
+            <div class="auth-content">
+                <!-- Login Form -->
+                <div class="auth-form active" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">
+                            <i class="ri-mail-line"></i>
+                            البريد الإلكتروني
+                        </label>
+                        <input type="email" id="login-email" class="form-input" placeholder="example@gmail.com" required>
+                        <div id="login-email-error" class="error-message" style="display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">
+                            <i class="ri-lock-line"></i>
+                            كلمة المرور
+                        </label>
+                        <div class="password-input">
+                            <input type="password" id="login-password" class="form-input" placeholder="********" required>
+                            <button type="button" class="show-password">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                        <div id="login-password-error" class="error-message" style="display: none;"></div>
+                    </div>
+                    
+                    <button class="auth-btn primary" id="login-btn">
+                        <i class="ri-login-box-line"></i>
+                        تسجيل الدخول
+                    </button>
+                    
+                    <div class="auth-divider">
+                        <span>أو</span>
+                    </div>
+                    
+                    <button class="auth-btn secondary" id="forgot-password-btn">
+                        <i class="ri-key-line"></i>
+                        نسيت كلمة المرور؟
+                    </button>
+                </div>
+                
+                <!-- Signup Form -->
+                <div class="auth-form" id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name">
+                            <i class="ri-user-line"></i>
+                            اسم المستخدم
+                        </label>
+                        <input type="text" id="signup-name" class="form-input" placeholder="ادخل اسمك" required>
+                        <div id="signup-name-error" class="error-message" style="display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-email">
+                            <i class="ri-mail-line"></i>
+                            البريد الإلكتروني
+                        </label>
+                        <input type="email" id="signup-email" class="form-input" placeholder="example@gmail.com" required>
+                        <div id="signup-email-error" class="error-message" style="display: none;"></div>
+                        <div id="signup-email-success" class="success-message" style="display: none;">
+                            <i class="ri-check-line"></i> البريد الإلكتروني مسموح به
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-password">
+                            <i class="ri-lock-line"></i>
+                            كلمة المرور (8-40 حرف)
+                        </label>
+                        <div class="password-input">
+                            <input type="password" id="signup-password" class="form-input" placeholder="********" required>
+                            <button type="button" class="show-password">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div id="password-strength-fill" class="strength-fill"></div>
+                            </div>
+                            <div id="password-strength-text" class="strength-text">قوة كلمة المرور: ضعيفة</div>
+                        </div>
+                        <div id="signup-password-error" class="error-message" style="display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signup-confirm-password">
+                            <i class="ri-lock-password-line"></i>
+                            تأكيد كلمة المرور
+                        </label>
+                        <div class="password-input">
+                            <input type="password" id="signup-confirm-password" class="form-input" placeholder="********" required>
+                            <button type="button" class="show-password">
+                                <i class="ri-eye-line"></i>
+                            </button>
+                        </div>
+                        <div id="signup-confirm-error" class="error-message" style="display: none;"></div>
+                    </div>
+                    
+                    <button class="auth-btn primary" id="signup-btn">
+                        <i class="ri-user-add-line"></i>
+                        إنشاء حساب
+                    </button>
+                    
+                    <div class="auth-agreement">
+                        <p>بالإنشاء حساب، أنت توافق على <a href="#">شروط الخدمة</a> و <a href="#">سياسة الخصوصية</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="auth-footer">
+                <p>© 2024 MiniNotes Pro Max. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="module">
+        // ===== Firebase Configuration =====
+        const firebaseConfig = {
+            apiKey: "AIzaSyCOqwdTEjaPp_iTMia1t1IjS8fxSUQtnTY",
+            authDomain: "mininotesapp-8b171.firebaseapp.com",
+            projectId: "mininotesapp-8b171",
+            storageBucket: "mininotesapp-8b171.appspot.com",
+            messagingSenderId: "135430086212",
+            appId: "1:135430086212:web:818a9ab60f393d0ae5e611",
+            measurementId: "G-4RXQ2H257S"
+        };
+
+        // ===== Import Firebase =====
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+        import { 
+            getAuth, 
+            createUserWithEmailAndPassword, 
+            signInWithEmailAndPassword,
+            onAuthStateChanged,
+            updateProfile,
+            sendPasswordResetEmail
+        } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+        import { 
+            getFirestore, 
+            setDoc, 
+            doc 
+        } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+        // ===== Initialize Firebase =====
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // ===== تحميل ملف blocked_domains.json =====
+        let blockedDomains = [];
+        let allowedDomains = [];
+
+        async function loadBlockedDomains() {
+            try {
+                const response = await fetch('blocked_domains.json');
+                const data = await response.json();
+                allowedDomains = data.allowed_domains || [];
+                blockedDomains = data.blocked_domains || [];
+                console.log('تم تحميل قائمة الدومينات الممنوعة:', blockedDomains.length, 'دومين');
+            } catch (error) {
+                console.error('خطأ في تحميل ملف الدومينات:', error);
+                allowedDomains = ['gmail.com', 'gmail.sa'];
+                blockedDomains = [];
+            }
+        }
+
+        // ===== Utility Functions =====
+        function showAlert(message, type = 'success') {
+            document.querySelectorAll('.alert').forEach(alert => alert.remove());
+            
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.innerHTML = `
+                <i class="ri-${type === 'success' ? 'checkbox-circle' : 'error-warning'}-fill"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(alert);
+            
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.remove();
+                }
+            }, 3000);
+        }
+        
+        function toggleLoading(show) {
+            const authContainer = document.querySelector('.auth-container');
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            if (show) {
+                authContainer.style.display = 'none';
+                loadingScreen.style.display = 'flex';
+            } else {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    authContainer.style.display = 'block';
+                }, 500);
+            }
+        }
+        
+        function toggleButtonLoading(button, loading) {
+            if (loading) {
+                button.disabled = true;
+                button.innerHTML = `
+                    <i class="ri-loader-4-line ri-spin"></i>
+                    جاري المعالجة...
+                `;
+            } else {
+                button.disabled = false;
+                const originalText = button.id === 'login-btn' ? 
+                    '<i class="ri-login-box-line"></i> تسجيل الدخول' : 
+                    '<i class="ri-user-add-line"></i> إنشاء حساب';
+                button.innerHTML = originalText;
+            }
+        }
+
+        // ===== Validation Functions =====
+        function validateEmail(email) {
+            if (!email) return { valid: false, error: "البريد الإلكتروني مطلوب" };
+            
+            if (!email.includes('@')) {
+                return { valid: false, error: "البريد الإلكتروني يجب أن يحتوي على @" };
+            }
+            
+            const [localPart, domain] = email.split('@');
+            
+            // التحقق من الجزء قبل @ (8 أحرف على الأقل)
+            if (localPart.length < 8) {
+                return { valid: false, error: "يجب أن يحتوي الجزء قبل @ على 8 أحرف على الأقل" };
+            }
+            
+            const domainLower = domain.toLowerCase();
+            
+            // التحقق إذا كان الدومين مسموحاً
+            const isAllowed = allowedDomains.some(allowed => 
+                domainLower.endsWith(allowed.toLowerCase())
+            );
+            
+            if (!isAllowed) {
+                // التحقق إذا كان الدومين ممنوعاً
+                const isBlocked = blockedDomains.some(blocked => 
+                    domainLower.endsWith(blocked.toLowerCase())
+                );
+                
+                if (isBlocked) {
+                    return { valid: false, error: "لا يمكن استخدام هذا النوع من البريد الإلكتروني" };
+                }
+                
+                return { valid: false, error: "يسمح فقط بـ gmail.com و gmail.sa" };
+            }
+            
+            return { valid: true, error: null };
+        }
+        
+        function validatePassword(password) {
+            if (!password) return { valid: false, error: "كلمة المرور مطلوبة", strength: 0 };
+            
+            if (password.length < 8) {
+                return { valid: false, error: "كلمة المرور يجب أن تكون 8 أحرف على الأقل", strength: 0 };
+            }
+            
+            if (password.length > 40) {
+                return { valid: false, error: "كلمة المرور يجب أن لا تتجاوز 40 حرفاً", strength: 0 };
+            }
+            
+            // حساب قوة كلمة المرور
+            let strength = 0;
+            if (password.length >= 12) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            return { 
+                valid: true, 
+                error: null,
+                strength: strength
+            };
+        }
+        
+        function showError(elementId, message) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.textContent = message;
+                element.style.display = 'block';
+            }
+        }
+        
+        function hideError(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.style.display = 'none';
+            }
+        }
+        
+        function updatePasswordStrength(password) {
+            const validation = validatePassword(password);
+            const strengthFill = document.getElementById('password-strength-fill');
+            const strengthText = document.getElementById('password-strength-text');
+            
+            if (!strengthFill || !strengthText) return;
+            
+            const strength = validation.strength;
+            let width = 0;
+            let color = '#EF4444';
+            let text = 'ضعيفة جداً';
+            
+            switch(strength) {
+                case 1:
+                    width = 20;
+                    color = '#EF4444';
+                    text = 'ضعيفة';
+                    break;
+                case 2:
+                    width = 40;
+                    color = '#F59E0B';
+                    text = 'متوسطة';
+                    break;
+                case 3:
+                    width = 60;
+                    color = '#3B82F6';
+                    text = 'جيدة';
+                    break;
+                case 4:
+                    width = 80;
+                    color = '#10B981';
+                    text = 'قوية';
+                    break;
+                case 5:
+                    width = 100;
+                    color = '#059669';
+                    text = 'قوية جداً';
+                    break;
+            }
+            
+            strengthFill.style.width = `${width}%`;
+            strengthFill.style.backgroundColor = color;
+            strengthText.textContent = `قوة كلمة المرور: ${text}`;
+            strengthText.style.color = color;
+        }
+
+        // ===== Check Auth State =====
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                window.location.href = 'index.html';
+            }
+        });
+
+        // ===== DOM Ready =====
+        document.addEventListener('DOMContentLoaded', async function() {
+            // تحميل قائمة الدومينات الممنوعة
+            await loadBlockedDomains();
+            
+            // Tab switching
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+                    
+                    tab.classList.add('active');
+                    document.getElementById(`${tab.dataset.tab}-form`).classList.add('active');
+                    
+                    // إخفاء رسائل الخطأ عند تبديل التبويبات
+                    document.querySelectorAll('.error-message, .success-message').forEach(el => {
+                        el.style.display = 'none';
+                    });
+                });
+            });
+            
+            // Show/hide password
+            document.querySelectorAll('.show-password').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const input = e.target.closest('.password-input').querySelector('input');
+                    const icon = e.target.tagName === 'I' ? e.target : e.target.querySelector('i');
+                    
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.className = 'ri-eye-off-line';
+                    } else {
+                        input.type = 'password';
+                        icon.className = 'ri-eye-line';
+                    }
+                });
+            });
+            
+            // Real-time validation for signup email
+            document.getElementById('signup-email').addEventListener('input', function() {
+                const email = this.value.trim();
+                const emailError = document.getElementById('signup-email-error');
+                const emailSuccess = document.getElementById('signup-email-success');
+                
+                hideError('signup-email-error');
+                if (emailSuccess) emailSuccess.style.display = 'none';
+                
+                if (email) {
+                    const validation = validateEmail(email);
+                    if (validation.valid) {
+                        this.classList.remove('error');
+                        this.classList.add('success');
+                        if (emailSuccess) emailSuccess.style.display = 'flex';
+                    } else {
+                        this.classList.remove('success');
+                        this.classList.add('error');
+                        showError('signup-email-error', validation.error);
+                    }
+                } else {
+                    this.classList.remove('error', 'success');
+                }
+            });
+            
+            // Real-time validation for signup password
+            document.getElementById('signup-password').addEventListener('input', function() {
+                const password = this.value;
+                updatePasswordStrength(password);
+                
+                const validation = validatePassword(password);
+                if (validation.valid) {
+                    this.classList.remove('error');
+                    hideError('signup-password-error');
+                } else {
+                    this.classList.add('error');
+                    showError('signup-password-error', validation.error);
+                }
+            });
+            
+            // Real-time validation for confirm password
+            document.getElementById('signup-confirm-password').addEventListener('input', function() {
+                const password = document.getElementById('signup-password').value;
+                const confirmPassword = this.value;
+                
+                if (confirmPassword && password !== confirmPassword) {
+                    this.classList.add('error');
+                    showError('signup-confirm-error', 'كلمتا المرور غير متطابقتين');
+                } else {
+                    this.classList.remove('error');
+                    hideError('signup-confirm-error');
+                }
+            });
+            
+            // Login
+            document.getElementById('login-btn').addEventListener('click', async () => {
+                const email = document.getElementById('login-email').value.trim();
+                const password = document.getElementById('login-password').value;
+                
+                // تحقق من البريد الإلكتروني
+                const emailValidation = validateEmail(email);
+                if (!emailValidation.valid) {
+                    showError('login-email-error', emailValidation.error);
+                    document.getElementById('login-email').classList.add('error');
+                    return;
+                } else {
+                    hideError('login-email-error');
+                    document.getElementById('login-email').classList.remove('error');
+                }
+                
+                if (!password) {
+                    showError('login-password-error', 'كلمة المرور مطلوبة');
+                    document.getElementById('login-password').classList.add('error');
+                    return;
+                } else {
+                    hideError('login-password-error');
+                    document.getElementById('login-password').classList.remove('error');
+                }
+                
+                const loginBtn = document.getElementById('login-btn');
+                toggleButtonLoading(loginBtn, true);
+                
+                try {
+                    await signInWithEmailAndPassword(auth, email, password);
+                    showAlert('تم تسجيل الدخول بنجاح!', 'success');
+                } catch (error) {
+                    let message = 'خطأ في تسجيل الدخول';
+                    switch (error.code) {
+                        case 'auth/invalid-credential':
+                        case 'auth/user-not-found':
+                        case 'auth/wrong-password':
+                            message = 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+                            break;
+                        case 'auth/too-many-requests':
+                            message = 'تم محاولة الدخول عدة مرات، يرجى المحاولة لاحقاً';
+                            break;
+                        case 'auth/user-disabled':
+                            message = 'تم تعطيل هذا الحساب';
+                            break;
+                        case 'auth/invalid-email':
+                            message = 'بريد إلكتروني غير صالح';
+                            break;
+                    }
+                    showAlert(message, 'error');
+                    toggleButtonLoading(loginBtn, false);
+                }
+            });
+            
+            // Signup
+            document.getElementById('signup-btn').addEventListener('click', async () => {
+                const name = document.getElementById('signup-name').value.trim();
+                const email = document.getElementById('signup-email').value.trim();
+                const password = document.getElementById('signup-password').value;
+                const confirmPassword = document.getElementById('signup-confirm-password').value;
+                
+                // التحقق من الاسم
+                if (!name) {
+                    showError('signup-name-error', 'اسم المستخدم مطلوب');
+                    document.getElementById('signup-name').classList.add('error');
+                    return;
+                } else {
+                    hideError('signup-name-error');
+                    document.getElementById('signup-name').classList.remove('error');
+                }
+                
+                // التحقق من البريد الإلكتروني
+                const emailValidation = validateEmail(email);
+                if (!emailValidation.valid) {
+                    showError('signup-email-error', emailValidation.error);
+                    document.getElementById('signup-email').classList.add('error');
+                    return;
+                } else {
+                    hideError('signup-email-error');
+                    document.getElementById('signup-email').classList.remove('error');
+                }
+                
+                // التحقق من كلمة المرور
+                const passwordValidation = validatePassword(password);
+                if (!passwordValidation.valid) {
+                    showError('signup-password-error', passwordValidation.error);
+                    document.getElementById('signup-password').classList.add('error');
+                    return;
+                } else {
+                    hideError('signup-password-error');
+                    document.getElementById('signup-password').classList.remove('error');
+                }
+                
+                // التحقق من تأكيد كلمة المرور
+                if (password !== confirmPassword) {
+                    showError('signup-confirm-error', 'كلمتا المرور غير متطابقتين');
+                    document.getElementById('signup-confirm-password').classList.add('error');
+                    return;
+                } else {
+                    hideError('signup-confirm-error');
+                    document.getElementById('signup-confirm-password').classList.remove('error');
+                }
+                
+                const signupBtn = document.getElementById('signup-btn');
+                toggleButtonLoading(signupBtn, true);
+                
+                try {
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    const user = userCredential.user;
+                    
+                    // تحديث اسم المستخدم
+                    await updateProfile(user, { displayName: name });
+                    
+                    // إنشاء مستند المستخدم في Firestore
+                    await setDoc(doc(db, "users", user.uid), {
+                        name: name,
+                        email: email,
+                        createdAt: new Date(),
+                        theme: 'light',
+                        settings: {}
+                    });
+                    
+                    showAlert('تم إنشاء الحساب بنجاح!', 'success');
+                    
+                    // مسح النموذج
+                    document.getElementById('signup-name').value = '';
+                    document.getElementById('signup-email').value = '';
+                    document.getElementById('signup-password').value = '';
+                    document.getElementById('signup-confirm-password').value = '';
+                    
+                    // التبديل إلى تبويب تسجيل الدخول
+                    document.querySelector('[data-tab="login"]').click();
+                    
+                } catch (error) {
+                    let message = 'حدث خطأ أثناء إنشاء الحساب';
+                    switch (error.code) {
+                        case 'auth/email-already-in-use':
+                            message = 'هذا البريد الإلكتروني مستخدم بالفعل';
+                            break;
+                        case 'auth/invalid-email':
+                            message = 'بريد إلكتروني غير صالح';
+                            break;
+                        case 'auth/weak-password':
+                            message = 'كلمة المرور ضعيفة جداً';
+                            break;
+                    }
+                    showAlert(message, 'error');
+                } finally {
+                    toggleButtonLoading(signupBtn, false);
+                }
+            });
+            
+            // Forgot password
+            document.getElementById('forgot-password-btn').addEventListener('click', async () => {
+                const email = document.getElementById('login-email').value.trim();
+                
+                if (!email) {
+                    showAlert('يرجى إدخال بريدك الإلكتروني', 'error');
+                    return;
+                }
+                
+                try {
+                    await sendPasswordResetEmail(auth, email);
+                    showAlert('تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني', 'success');
+                } catch (error) {
+                    showAlert('حدث خطأ أثناء إرسال رابط إعادة التعيين', 'error');
+                }
+            });
+            
+            // Enter key support
+            document.querySelectorAll('.form-input').forEach(input => {
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        if (document.getElementById('login-form').classList.contains('active')) {
+                            document.getElementById('login-btn').click();
+                        } else {
+                            document.getElementById('signup-btn').click();
+                        }
+                    }
+                });
+            });
+            
+            // إخفاء شاشة التحميل بعد تحميل كل شيء
+            setTimeout(() => {
+                toggleLoading(false);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
