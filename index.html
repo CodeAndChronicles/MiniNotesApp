@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>📝 Mini Notes Pro | ملاحظاتك الآمنة</title>
+    <title>📝 Mini Notes | ملاحظاتك الآمنة</title>
     
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     
-    <!-- Google Fonts - 10 خطوط جميلة -->
+    <!-- Google Fonts - خطوط عربية وإنجليزية -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -20,82 +22,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mirza:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- خطوط إنجليزية -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            /* نظام الألوان المتكامل */
-            --primary-50: #f5f3ff;
-            --primary-100: #ede9fe;
-            --primary-200: #ddd6fe;
-            --primary-300: #c4b5fd;
-            --primary-400: #a78bfa;
-            --primary-500: #8b5cf6;
-            --primary-600: #7c3aed;
-            --primary-700: #6d28d9;
-            --primary-800: #5b21b6;
-            --primary-900: #4c1d95;
+            /* نظام الألوان الذهبي والبرتقالي */
+            --gold-50: #fffdf4;
+            --gold-100: #fff9e6;
+            --gold-200: #ffefb3;
+            --gold-300: #ffdf80;
+            --gold-400: #ffcf4d;
+            --gold-500: #fbbf24;
+            --gold-600: #f59e0b;
+            --gold-700: #d97706;
+            --gold-800: #b45309;
+            --gold-900: #92400e;
             
-            --secondary-50: #ecfdf5;
-            --secondary-100: #d1fae5;
-            --secondary-200: #a7f3d0;
-            --secondary-300: #6ee7b7;
-            --secondary-400: #34d399;
-            --secondary-500: #10b981;
-            --secondary-600: #059669;
-            --secondary-700: #047857;
-            --secondary-800: #065f46;
-            --secondary-900: #064e3b;
-            
-            --danger-50: #fef2f2;
-            --danger-100: #fee2e2;
-            --danger-200: #fecaca;
-            --danger-300: #fca5a5;
-            --danger-400: #f87171;
-            --danger-500: #ef4444;
-            --danger-600: #dc2626;
-            --danger-700: #b91c1c;
-            --danger-800: #991b1b;
-            --danger-900: #7f1d1d;
-            
-            --warning-50: #fffbeb;
-            --warning-100: #fef3c7;
-            --warning-200: #fde68a;
-            --warning-300: #fcd34d;
-            --warning-400: #fbbf24;
-            --warning-500: #f59e0b;
-            --warning-600: #d97706;
-            --warning-700: #b45309;
-            --warning-800: #92400e;
-            --warning-900: #78350f;
-            
-            --info-50: #eff6ff;
-            --info-100: #dbeafe;
-            --info-200: #bfdbfe;
-            --info-300: #93c5fd;
-            --info-400: #60a5fa;
-            --info-500: #3b82f6;
-            --info-600: #2563eb;
-            --info-700: #1d4ed8;
-            --info-800: #1e40af;
-            --info-900: #1e3a8a;
-            
-            /* ألوان إضافية للتصميم */
-            --pink-500: #ec4899;
-            --purple-500: #a855f7;
-            --indigo-500: #6366f1;
-            --teal-500: #14b8a6;
+            --orange-50: #fff7ed;
+            --orange-100: #ffedd5;
+            --orange-200: #fed7aa;
+            --orange-300: #fdba74;
+            --orange-400: #fb923c;
             --orange-500: #f97316;
-            --rose-500: #f43f5e;
-            --sky-500: #0ea5e9;
-            --lime-500: #84cc16;
+            --orange-600: #ea580c;
+            --orange-700: #c2410c;
+            --orange-800: #9a3412;
+            --orange-900: #7c2d12;
+            
+            --yellow-50: #fefce8;
+            --yellow-100: #fef9c3;
+            --yellow-200: #fef08a;
+            --yellow-300: #fde047;
+            --yellow-400: #facc15;
+            --yellow-500: #eab308;
+            --yellow-600: #ca8a04;
+            --yellow-700: #a16207;
+            --yellow-800: #854d0e;
+            --yellow-900: #713f12;
+            
+            /* ألوان إضافية */
             --amber-500: #f59e0b;
+            --amber-600: #d97706;
+            --amber-700: #b45309;
+            
+            --rose-500: #f43f5e;
+            --rose-600: #e11d48;
+            
+            --sky-500: #0ea5e9;
+            --sky-600: #0284c7;
+            
+            --emerald-500: #10b981;
+            --emerald-600: #059669;
+            
+            --violet-500: #8b5cf6;
+            --violet-600: #7c3aed;
+            
+            --pink-500: #ec4899;
+            --pink-600: #db2777;
+            
+            --indigo-500: #6366f1;
+            --indigo-600: #4f46e5;
+            
+            --blue-500: #3b82f6;
+            --blue-600: #2563eb;
+            
+            --red-500: #ef4444;
+            --red-600: #dc2626;
+            
+            --green-500: #22c55e;
+            --green-600: #16a34a;
+            
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            
+            --cyan-500: #06b6d4;
+            --cyan-600: #0891b2;
+            
+            --lime-500: #84cc16;
+            --lime-600: #65a30d;
+            
+            --stone-500: #78716c;
+            --stone-600: #57534e;
             
             /* المتغيرات الرئيسية */
             --bg-primary: #ffffff;
             --bg-secondary: #f8fafc;
             --bg-tertiary: #f1f5f9;
             --bg-card: #ffffff;
-            --bg-sidebar: #ffffff;
+            --bg-sidebar: linear-gradient(135deg, #fff9e6 0%, #ffedd5 100%);
             --bg-modal: #ffffff;
+            --bg-header: rgba(255, 255, 255, 0.95);
             
             --text-primary: #1e293b;
             --text-secondary: #64748b;
@@ -111,6 +132,7 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-gold: 0 10px 25px rgba(251, 191, 36, 0.2);
             
             --radius-sm: 8px;
             --radius-md: 12px;
@@ -124,6 +146,7 @@
             --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
             --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
             
+            /* خطوط عربية */
             --font-cairo: 'Cairo', sans-serif;
             --font-almarai: 'Almarai', sans-serif;
             --font-tajawal: 'Tajawal', sans-serif;
@@ -135,7 +158,14 @@
             --font-lateef: 'Lateef', serif;
             --font-mirza: 'Mirza', cursive;
             
-            --sidebar-width: 280px;
+            /* خطوط إنجليزية */
+            --font-poppins: 'Poppins', sans-serif;
+            --font-inter: 'Inter', sans-serif;
+            --font-montserrat: 'Montserrat', sans-serif;
+            --font-opensans: 'Open Sans', sans-serif;
+            --font-roboto: 'Roboto', sans-serif;
+            
+            --sidebar-width: 320px;
             --header-height: 70px;
             --fab-size: 64px;
         }
@@ -145,8 +175,9 @@
             --bg-secondary: #1e293b;
             --bg-tertiary: #334155;
             --bg-card: #1e293b;
-            --bg-sidebar: #1e293b;
+            --bg-sidebar: linear-gradient(135deg, #1e293b 0%, #334155 100%);
             --bg-modal: #1e293b;
+            --bg-header: rgba(30, 41, 59, 0.95);
             
             --text-primary: #f1f5f9;
             --text-secondary: #cbd5e1;
@@ -162,6 +193,7 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
             --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --shadow-gold: 0 10px 25px rgba(251, 191, 36, 0.3);
         }
         
         * {
@@ -197,13 +229,13 @@
         }
         
         ::-webkit-scrollbar-thumb {
-            background: var(--primary-500);
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
             border-radius: var(--radius-full);
             transition: background var(--transition-fast);
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-600);
+            background: linear-gradient(135deg, var(--gold-600), var(--orange-600));
         }
         
         /* ===== Loading Screen ===== */
@@ -213,7 +245,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+            background: linear-gradient(135deg, var(--gold-600) 0%, var(--orange-600) 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -238,7 +270,7 @@
         .loading-logo-icon {
             width: 100px;
             height: 100px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             border-radius: 24px;
             display: flex;
@@ -247,7 +279,7 @@
             animation: float 3s ease-in-out infinite;
         }
         
-        .loading-logo-icon i {
+        .loading-logo-icon iconify-icon {
             font-size: 48px;
             color: white;
         }
@@ -261,7 +293,7 @@
         }
         
         .loading-logo-text span {
-            background: linear-gradient(45deg, #fbbf24, #34d399);
+            background: linear-gradient(45deg, #ffcf4d, #fbbf24);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -278,14 +310,14 @@
         
         .loading-progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, var(--secondary-400), var(--primary-400));
+            background: linear-gradient(90deg, var(--gold-400), var(--orange-400));
             border-radius: var(--radius-full);
             animation: loading 2s ease-in-out infinite;
             width: 40%;
         }
         
         .loading-text {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
             font-weight: 500;
         }
@@ -305,9 +337,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        @keyframes slideInUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         
         @keyframes scaleIn {
@@ -320,79 +352,87 @@
             50% { opacity: 0.5; }
         }
         
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
         /* ===== Toast Notifications ===== */
         .toast-container {
             position: fixed;
-            top: 90px;
-            left: 24px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 9998;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
+            max-width: 90vw;
+            width: auto;
         }
         
         .toast {
-            min-width: 320px;
-            max-width: 400px;
+            min-width: 280px;
+            max-width: 350px;
             background: var(--bg-card);
             border-radius: var(--radius-lg);
-            padding: 18px 24px;
+            padding: 12px 16px;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 12px;
             box-shadow: var(--shadow-xl);
-            border-left: 4px solid var(--primary-500);
-            animation: slideInRight var(--transition-normal);
+            border-top: 3px solid var(--gold-500);
+            animation: slideInUp var(--transition-normal);
             backdrop-filter: blur(10px);
             border: 1px solid var(--border-light);
-            transform-origin: left center;
+            transform-origin: center;
         }
         
         .toast.success {
-            border-left-color: var(--secondary-500);
+            border-top-color: var(--emerald-500);
         }
         
         .toast.error {
-            border-left-color: var(--danger-500);
+            border-top-color: var(--rose-500);
         }
         
         .toast.info {
-            border-left-color: var(--info-500);
+            border-top-color: var(--sky-500);
         }
         
         .toast.warning {
-            border-left-color: var(--warning-500);
+            border-top-color: var(--amber-500);
         }
         
         .toast-icon {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             flex-shrink: 0;
         }
         
         .toast.success .toast-icon {
-            background: var(--secondary-50);
-            color: var(--secondary-600);
+            background: var(--emerald-50);
+            color: var(--emerald-600);
         }
         
         .toast.error .toast-icon {
-            background: var(--danger-50);
-            color: var(--danger-600);
+            background: var(--rose-50);
+            color: var(--rose-600);
         }
         
         .toast.info .toast-icon {
-            background: var(--info-50);
-            color: var(--info-600);
+            background: var(--sky-50);
+            color: var(--sky-600);
         }
         
         .toast.warning .toast-icon {
-            background: var(--warning-50);
-            color: var(--warning-600);
+            background: var(--amber-50);
+            color: var(--amber-600);
         }
         
         .toast-content {
@@ -400,21 +440,21 @@
         }
         
         .toast-title {
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
             color: var(--text-primary);
         }
         
         .toast-message {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.5;
+            line-height: 1.4;
         }
         
         .toast-close {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -433,29 +473,30 @@
         /* ===== Header ===== */
         .header {
             height: var(--header-height);
-            background: rgba(var(--bg-card-rgb), 0.8);
+            background: var(--bg-header);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-light);
             position: sticky;
             top: 0;
             z-index: 100;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             transition: all var(--transition-normal);
+            box-shadow: var(--shadow-sm);
         }
         
         .header.scrolled {
             box-shadow: var(--shadow-lg);
-            background: rgba(var(--bg-card-rgb), 0.95);
+            background: rgba(var(--bg-card-rgb), 0.98);
         }
         
         .header-left {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
         
         .menu-toggle {
@@ -473,23 +514,23 @@
         }
         
         .menu-toggle:hover {
-            background: var(--primary-50);
-            color: var(--primary-600);
-            border-color: var(--primary-200);
+            background: linear-gradient(135deg, var(--gold-100), var(--orange-100));
+            color: var(--gold-600);
+            border-color: var(--gold-300);
             transform: translateY(-2px);
         }
         
         .header-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
         }
         
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -497,6 +538,7 @@
             color: white;
             font-size: 24px;
             transition: transform var(--transition-bounce);
+            box-shadow: var(--shadow-gold);
         }
         
         .header-logo:hover .logo-icon {
@@ -507,21 +549,21 @@
             font-family: var(--font-almarai);
             font-size: 1.5rem;
             font-weight: 800;
-            background: linear-gradient(45deg, var(--primary-600), var(--secondary-500));
+            background: linear-gradient(45deg, var(--gold-600), var(--orange-600));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .header-center {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 2rem;
         }
         
         .search-container {
             position: relative;
-            width: 300px;
+            width: 100%;
         }
         
         .search-box {
@@ -530,18 +572,19 @@
             background: var(--bg-tertiary);
             border: 2px solid transparent;
             border-radius: var(--radius-full);
-            padding: 0 20px 0 50px;
+            padding: 0 50px 0 20px;
             font-family: var(--font-tajawal);
             font-size: 0.95rem;
             color: var(--text-primary);
             transition: all var(--transition-fast);
             outline: none;
+            box-shadow: var(--shadow-sm);
         }
         
         .search-box:focus {
             background: var(--bg-card);
-            border-color: var(--primary-300);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+            border-color: var(--gold-300);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
         }
         
         .search-box::placeholder {
@@ -550,12 +593,18 @@
         
         .search-icon {
             position: absolute;
-            right: 18px;
+            left: 18px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-tertiary);
             font-size: 1.2rem;
             pointer-events: none;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         
         .user-menu-container {
@@ -565,7 +614,7 @@
         .user-avatar {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, var(--primary-500), var(--secondary-400));
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -581,8 +630,8 @@
         
         .user-avatar:hover {
             transform: scale(1.05);
-            border-color: var(--primary-200);
-            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+            border-color: var(--gold-300);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
         }
         
         .dropdown-menu {
@@ -623,18 +672,18 @@
         }
         
         .dropdown-item:hover {
-            background: var(--bg-tertiary);
-            color: var(--primary-600);
+            background: linear-gradient(135deg, var(--gold-50), var(--orange-50));
+            color: var(--gold-700);
         }
         
-        .dropdown-item i {
+        .dropdown-item iconify-icon {
             width: 20px;
             font-size: 1.2rem;
             color: var(--text-tertiary);
         }
         
-        .dropdown-item:hover i {
-            color: var(--primary-500);
+        .dropdown-item:hover iconify-icon {
+            color: var(--gold-600);
         }
         
         .dropdown-divider {
@@ -661,15 +710,87 @@
             padding: 2rem 0;
             transition: transform var(--transition-normal);
             flex-shrink: 0;
+            box-shadow: var(--shadow-md);
         }
         
         .sidebar.hidden {
             transform: translateX(100%);
         }
         
+        .sidebar-header {
+            padding: 0 1.5rem 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar-user-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .sidebar-user-info {
+            flex: 1;
+        }
+        
+        .sidebar-user-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            font-family: var(--font-almarai);
+        }
+        
+        .sidebar-user-email {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .sidebar-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .sidebar-stat {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+        
+        .sidebar-stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold-700);
+            margin-bottom: 2px;
+        }
+        
+        .sidebar-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
         .sidebar-section {
             padding: 0 1.5rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
         
         .sidebar-title {
@@ -679,8 +800,11 @@
             color: var(--text-tertiary);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             padding-right: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .sidebar-items {
@@ -702,19 +826,21 @@
             border: 1px solid transparent;
             font-family: var(--font-tajawal);
             font-weight: 500;
+            background: rgba(255, 255, 255, 0.5);
         }
         
         .sidebar-item:hover {
-            background: var(--bg-tertiary);
+            background: linear-gradient(135deg, var(--gold-50), var(--orange-50));
             color: var(--text-primary);
             transform: translateX(-4px);
+            border-color: var(--gold-200);
         }
         
         .sidebar-item.active {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
             color: white;
-            border-color: var(--primary-400);
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+            border-color: var(--gold-400);
+            box-shadow: var(--shadow-gold);
         }
         
         .sidebar-item-content {
@@ -723,7 +849,7 @@
             gap: 14px;
         }
         
-        .sidebar-item i {
+        .sidebar-item iconify-icon {
             font-size: 1.3rem;
             width: 24px;
         }
@@ -740,20 +866,78 @@
         }
         
         .sidebar-item:not(.active) .sidebar-badge {
-            background: var(--primary-100);
-            color: var(--primary-700);
+            background: var(--gold-100);
+            color: var(--gold-700);
+        }
+        
+        .sidebar-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border-light);
+            margin-top: auto;
+        }
+        
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            border: 1px solid var(--border-light);
+        }
+        
+        .theme-toggle:hover {
+            background: linear-gradient(135deg, var(--gold-50), var(--orange-50));
+        }
+        
+        .theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+        
+        .theme-toggle-switch {
+            width: 48px;
+            height: 24px;
+            background: var(--border-medium);
+            border-radius: var(--radius-full);
+            position: relative;
+            transition: background var(--transition-fast);
+        }
+        
+        .theme-toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform var(--transition-fast);
+        }
+        
+        [data-theme="dark"] .theme-toggle-switch {
+            background: var(--gold-500);
+        }
+        
+        [data-theme="dark"] .theme-toggle-switch::after {
+            transform: translateX(-24px);
         }
         
         /* ===== Content Area ===== */
         .content {
             flex: 1;
-            padding: 2.5rem;
+            padding: 2rem;
             overflow-x: hidden;
+            max-width: calc(100vw - var(--sidebar-width));
         }
         
         /* ===== Welcome Banner ===== */
         .welcome-banner {
-            background: linear-gradient(135deg, var(--primary-500), var(--secondary-400));
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
             border-radius: var(--radius-xl);
             padding: 2.5rem;
             margin-bottom: 2.5rem;
@@ -818,7 +1002,7 @@
             gap: 10px;
         }
         
-        .welcome-stat i {
+        .welcome-stat iconify-icon {
             font-size: 1.5rem;
             opacity: 0.9;
         }
@@ -871,13 +1055,13 @@
         }
         
         .tab-btn.active {
-            background: var(--bg-card);
-            color: var(--primary-600);
-            border-color: var(--border-light);
-            box-shadow: var(--shadow-md);
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
+            color: white;
+            border-color: var(--gold-400);
+            box-shadow: var(--shadow-gold);
         }
         
-        .tab-btn i {
+        .tab-btn iconify-icon {
             font-size: 1.1rem;
         }
         
@@ -908,7 +1092,7 @@
         .note-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: var(--shadow-2xl);
-            border-color: var(--primary-200);
+            border-color: var(--gold-200);
         }
         
         .note-card.pinned::before {
@@ -920,7 +1104,7 @@
             height: 0;
             border-style: solid;
             border-width: 0 45px 45px 0;
-            border-color: transparent var(--warning-500) transparent transparent;
+            border-color: transparent var(--amber-500) transparent transparent;
         }
         
         .note-card.pinned::after {
@@ -942,18 +1126,37 @@
                 transparent 10px,
                 transparent 20px
             );
+            position: relative;
         }
         
         .note-card.locked::before {
-            content: '\ef6c';
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--gold-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--gold-500);
+            opacity: 0.8;
+        }
+        
+        .note-card.locked::after {
+            content: '';
             font-family: 'boxicons';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 3rem;
-            color: var(--text-muted);
-            opacity: 0.3;
+            font-size: 2rem;
+            color: var(--gold-600);
+            opacity: 0.9;
         }
         
         .note-color-tag {
@@ -971,8 +1174,8 @@
         }
         
         .note-lock-badge {
-            background: var(--info-100);
-            color: var(--info-700);
+            background: linear-gradient(135deg, var(--gold-100), var(--orange-100));
+            color: var(--gold-700);
             padding: 6px 12px;
             border-radius: var(--radius-full);
             font-size: 0.8rem;
@@ -980,6 +1183,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            border: 1px solid var(--gold-200);
         }
         
         .note-content {
@@ -1026,28 +1230,28 @@
         }
         
         .note-action-btn:hover {
-            background: var(--primary-100);
-            color: var(--primary-600);
-            border-color: var(--primary-200);
+            background: linear-gradient(135deg, var(--gold-100), var(--orange-100));
+            color: var(--gold-600);
+            border-color: var(--gold-200);
             transform: scale(1.1);
         }
         
         .note-action-btn.favorite.active {
-            background: var(--danger-100);
-            color: var(--danger-600);
-            border-color: var(--danger-200);
+            background: linear-gradient(135deg, var(--rose-100), var(--pink-100));
+            color: var(--rose-600);
+            border-color: var(--rose-200);
         }
         
         .note-action-btn.pin.active {
-            background: var(--warning-100);
-            color: var(--warning-600);
-            border-color: var(--warning-200);
+            background: linear-gradient(135deg, var(--amber-100), var(--yellow-100));
+            color: var(--amber-600);
+            border-color: var(--amber-200);
         }
         
         .note-action-btn.lock.active {
-            background: var(--info-100);
-            color: var(--info-600);
-            border-color: var(--info-200);
+            background: linear-gradient(135deg, var(--sky-100), var(--blue-100));
+            color: var(--sky-600);
+            border-color: var(--sky-200);
         }
         
         /* ===== Empty State ===== */
@@ -1060,9 +1264,9 @@
         
         .empty-state-icon {
             font-size: 5rem;
-            color: var(--text-muted);
+            color: var(--gold-300);
             margin-bottom: 1.5rem;
-            opacity: 0.5;
+            opacity: 0.8;
         }
         
         .empty-state-title {
@@ -1091,7 +1295,7 @@
         .fab {
             width: var(--fab-size);
             height: var(--fab-size);
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1107,8 +1311,8 @@
         
         .fab:hover {
             transform: scale(1.15) rotate(90deg);
-            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.4);
-            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+            box-shadow: 0 20px 40px rgba(251, 191, 36, 0.4);
+            background: linear-gradient(135deg, var(--gold-600), var(--orange-600));
         }
         
         .fab-tooltip {
@@ -1180,13 +1384,13 @@
         .password-prompt-icon {
             width: 80px;
             height: 80px;
-            background: var(--info-100);
+            background: linear-gradient(135deg, var(--gold-100), var(--orange-100));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            color: var(--info-600);
+            color: var(--gold-600);
             font-size: 2.5rem;
         }
         
@@ -1220,9 +1424,9 @@
         }
         
         .password-input:focus {
-            border-color: var(--primary-500);
+            border-color: var(--gold-500);
             background: var(--bg-card);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
         }
         
         .password-input::placeholder {
@@ -1299,8 +1503,8 @@
         }
         
         .modal-close:hover {
-            background: var(--danger-100);
-            color: var(--danger-600);
+            background: linear-gradient(135deg, var(--rose-100), var(--pink-100));
+            color: var(--rose-600);
             transform: rotate(90deg);
         }
         
@@ -1340,9 +1544,9 @@
         }
         
         .note-textarea:focus {
-            border-color: var(--primary-500);
+            border-color: var(--gold-500);
             background: var(--bg-card);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
         }
         
         .editor-options {
@@ -1355,12 +1559,12 @@
         .color-picker {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
         
         .color-option {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             cursor: pointer;
             border: 3px solid transparent;
@@ -1381,7 +1585,7 @@
         
         .editor-actions {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
         
@@ -1399,17 +1603,17 @@
         }
         
         .editor-action-btn:hover {
-            background: var(--primary-100);
-            color: var(--primary-600);
-            border-color: var(--primary-200);
+            background: linear-gradient(135deg, var(--gold-100), var(--orange-100));
+            color: var(--gold-600);
+            border-color: var(--gold-200);
             transform: translateY(-2px);
         }
         
         .editor-action-btn.active {
-            background: var(--primary-500);
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
             color: white;
-            border-color: var(--primary-400);
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+            border-color: var(--gold-400);
+            box-shadow: var(--shadow-gold);
         }
         
         /* ===== Settings Modal ===== */
@@ -1443,8 +1647,8 @@
         }
         
         .settings-tab-btn.active {
-            color: var(--primary-600);
-            border-bottom-color: var(--primary-500);
+            color: var(--gold-600);
+            border-bottom-color: var(--gold-500);
         }
         
         .settings-tab-content {
@@ -1484,9 +1688,9 @@
         }
         
         .form-input:focus {
-            border-color: var(--primary-500);
+            border-color: var(--gold-500);
             background: var(--bg-card);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
         }
         
         .form-input::placeholder {
@@ -1502,15 +1706,15 @@
         }
         
         .danger-zone {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.02));
-            border: 2px solid var(--danger-200);
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.05), rgba(251, 191, 36, 0.02));
+            border: 2px solid var(--gold-200);
             border-radius: var(--radius-lg);
             padding: 1.5rem;
             margin-top: 2rem;
         }
         
         .danger-title {
-            color: var(--danger-600);
+            color: var(--gold-600);
             font-family: var(--font-almarai);
             font-size: 1.2rem;
             font-weight: 700;
@@ -1553,13 +1757,13 @@
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            background: linear-gradient(135deg, var(--gold-500), var(--orange-500));
             color: white;
         }
         
         .btn-primary:hover {
-            background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
-            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+            background: linear-gradient(135deg, var(--gold-600), var(--orange-600));
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
         }
         
         .btn-secondary {
@@ -1574,22 +1778,22 @@
         }
         
         .btn-danger {
-            background: linear-gradient(135deg, var(--danger-500), var(--danger-600));
+            background: linear-gradient(135deg, var(--rose-500), var(--pink-500));
             color: white;
         }
         
         .btn-danger:hover {
-            background: linear-gradient(135deg, var(--danger-600), var(--danger-700));
-            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+            background: linear-gradient(135deg, var(--rose-600), var(--pink-600));
+            box-shadow: 0 10px 25px rgba(244, 63, 94, 0.3);
         }
         
         .btn-success {
-            background: linear-gradient(135deg, var(--secondary-500), var(--secondary-600));
+            background: linear-gradient(135deg, var(--emerald-500), var(--green-500));
             color: white;
         }
         
         .btn-success:hover {
-            background: linear-gradient(135deg, var(--secondary-600), var(--secondary-700));
+            background: linear-gradient(135deg, var(--emerald-600), var(--green-600));
             box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
         }
         
@@ -1627,16 +1831,16 @@
         }
         
         .font-option:hover {
-            border-color: var(--primary-300);
-            background: var(--primary-50);
+            border-color: var(--gold-300);
+            background: linear-gradient(135deg, var(--gold-50), var(--orange-50));
             transform: translateY(-2px);
         }
         
         .font-option.active {
-            border-color: var(--primary-500);
-            background: var(--primary-100);
-            color: var(--primary-700);
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+            border-color: var(--gold-500);
+            background: linear-gradient(135deg, var(--gold-100), var(--orange-100));
+            color: var(--gold-700);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.1);
         }
         
         .font-option.cairo { font-family: var(--font-cairo); }
@@ -1649,6 +1853,40 @@
         .font-option.amiri { font-family: var(--font-amiri); }
         .font-option.lateef { font-family: var(--font-lateef); }
         .font-option.mirza { font-family: var(--font-mirza); }
+        .font-option.poppins { font-family: var(--font-poppins); }
+        .font-option.inter { font-family: var(--font-inter); }
+        .font-option.montserrat { font-family: var(--font-montserrat); }
+        .font-option.opensans { font-family: var(--font-opensans); }
+        .font-option.roboto { font-family: var(--font-roboto); }
+        
+        /* ===== Trash Page ===== */
+        .trash-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .trash-empty {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .trash-empty-icon {
+            font-size: 4rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        .trash-empty-title {
+            font-family: var(--font-almarai);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
         
         /* ===== Responsive Design ===== */
         @media (max-width: 1400px) {
@@ -1659,7 +1897,7 @@
         
         @media (max-width: 1200px) {
             :root {
-                --sidebar-width: 260px;
+                --sidebar-width: 280px;
             }
             
             .notes-grid {
@@ -1669,11 +1907,19 @@
             .welcome-banner {
                 padding: 2rem;
             }
+            
+            .content {
+                max-width: calc(100vw - 280px);
+            }
         }
         
         @media (max-width: 992px) {
             .header {
                 padding: 0 1.25rem;
+            }
+            
+            .header-center {
+                margin: 0 1rem;
             }
             
             .sidebar {
@@ -1696,11 +1942,12 @@
             }
             
             .content {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem;
+                max-width: 100vw;
             }
             
             .search-container {
-                width: 200px;
+                max-width: 300px;
             }
             
             .notes-grid {
@@ -1719,17 +1966,22 @@
                 display: none;
             }
             
+            .header-center {
+                margin: 0 0.5rem;
+            }
+            
             .search-container {
-                width: 160px;
+                max-width: 200px;
             }
             
             .content {
-                padding: 1.5rem 1rem;
+                padding: 1.25rem;
             }
             
             .welcome-banner {
                 padding: 1.5rem;
                 margin-bottom: 2rem;
+                text-align: center;
             }
             
             .welcome-title {
@@ -1741,7 +1993,8 @@
             }
             
             .welcome-stats {
-                gap: 1rem;
+                justify-content: center;
+                gap: 1.5rem;
             }
             
             .notes-grid {
@@ -1778,10 +2031,16 @@
                 bottom: 1rem;
                 left: 1rem;
             }
+            
+            .toast {
+                min-width: 250px;
+                max-width: 300px;
+                padding: 10px 14px;
+            }
         }
         
         @media (max-width: 640px) {
-            .search-container {
+            .header-center {
                 display: none;
             }
             
@@ -1790,16 +2049,18 @@
             }
             
             .welcome-banner {
-                text-align: center;
-                padding: 1.5rem 1rem;
+                padding: 1.25rem;
             }
             
             .welcome-stats {
-                justify-content: center;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
             }
             
             .tabs-nav {
                 flex-wrap: wrap;
+                justify-content: center;
             }
             
             .tab-btn {
@@ -1824,6 +2085,16 @@
                 font-size: 1rem;
             }
             
+            .font-selector {
+                grid-template-columns: 1fr;
+            }
+            
+            .editor-options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
             :root {
                 --fab-size: 56px;
             }
@@ -1840,7 +2111,7 @@
             }
             
             .content {
-                padding: 1.25rem 0.75rem;
+                padding: 1rem 0.75rem;
             }
             
             .modal {
@@ -1871,17 +2142,23 @@
             }
             
             .settings-tab-btn.active {
-                border-bottom: 3px solid var(--primary-500);
-            }
-            
-            .font-selector {
-                grid-template-columns: 1fr;
+                border-bottom: 3px solid var(--gold-500);
             }
             
             .fab {
                 width: 52px;
                 height: 52px;
                 font-size: 1.6rem;
+            }
+            
+            .toast-container {
+                bottom: 10px;
+            }
+            
+            .toast {
+                min-width: 220px;
+                max-width: 280px;
+                padding: 8px 12px;
             }
         }
         
@@ -1921,6 +2198,14 @@
                 height: 48px;
                 font-size: 1.5rem;
             }
+            
+            .tabs-nav {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -1929,9 +2214,9 @@
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-logo">
             <div class="loading-logo-icon">
-                <i class='bx bx-notepad'></i>
+                <iconify-icon icon="mdi:notebook-edit-outline" style="font-size: 48px;"></iconify-icon>
             </div>
-            <div class="loading-logo-text">Mini Notes <span>Pro Max</span></div>
+            <div class="loading-logo-text">Mini <span>Notes</span></div>
         </div>
         <div class="loading-progress">
             <div class="loading-progress-bar"></div>
@@ -1946,12 +2231,12 @@
     <div class="password-prompt-overlay" id="passwordPrompt">
         <div class="password-prompt">
             <div class="password-prompt-icon">
-                <i class='bx bx-lock-alt'></i>
+                <iconify-icon icon="mdi:lock-outline"></iconify-icon>
             </div>
             <h3 class="password-prompt-title">ملاحظة محمية</h3>
             <p class="password-prompt-description">أدخل كلمة مرور الملاحظات العامة لفتح هذه الملاحظة</p>
             <input type="password" class="password-input" id="notePasswordInput" placeholder="أدخل كلمة المرور">
-            <div style="display: flex; gap: 12px;">
+            <div style="display: flex; gap: 12px; justify-content: center;">
                 <button class="btn btn-secondary btn-sm" id="cancelPasswordBtn">إلغاء</button>
                 <button class="btn btn-primary btn-sm" id="submitPasswordBtn">فتح الملاحظة</button>
             </div>
@@ -1962,36 +2247,38 @@
     <header class="header" id="mainHeader">
         <div class="header-left">
             <button class="menu-toggle" id="menuToggle">
-                <i class='bx bx-menu'></i>
+                <iconify-icon icon="mdi:menu"></iconify-icon>
             </button>
             <a href="#" class="header-logo">
                 <div class="logo-icon">
-                    <i class='bx bx-notepad'></i>
+                    <iconify-icon icon="mdi:notebook-edit-outline"></iconify-icon>
                 </div>
                 <span class="logo-text">Mini Notes</span>
             </a>
         </div>
         
-        <div class="header-right">
+        <div class="header-center">
             <div class="search-container">
-                <i class='bx bx-search search-icon'></i>
+                <iconify-icon icon="mdi:magnify" class="search-icon"></iconify-icon>
                 <input type="text" class="search-box" id="searchInput" placeholder="ابحث في ملاحظاتك...">
             </div>
-            
+        </div>
+        
+        <div class="header-right">
             <div class="user-menu-container">
                 <div class="user-avatar" id="userAvatar">م</div>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <div class="dropdown-item" id="settingsBtn">
-                        <i class='bx bx-cog'></i>
+                        <iconify-icon icon="mdi:cog-outline"></iconify-icon>
                         <span>الإعدادات</span>
                     </div>
                     <div class="dropdown-item" id="themeToggleBtn">
-                        <i class='bx bx-moon'></i>
+                        <iconify-icon icon="mdi:moon-waning-crescent"></iconify-icon>
                         <span>تبديل الثيم</span>
                     </div>
                     <div class="dropdown-divider"></div>
                     <div class="dropdown-item" id="logoutBtn">
-                        <i class='bx bx-log-out'></i>
+                        <iconify-icon icon="mdi:logout"></iconify-icon>
                         <span>تسجيل الخروج</span>
                     </div>
                 </div>
@@ -2003,46 +2290,72 @@
     <div class="main-container">
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title">الملاحظات</div>
-                <div class="sidebar-items">
-                    <div class="sidebar-item active" data-section="all">
-                        <div class="sidebar-item-content">
-                            <i class='bx bx-notepad'></i>
-                            <span>جميع الملاحظات</span>
-                        </div>
-                        <div class="sidebar-badge" id="allCount">0</div>
+            <div class="sidebar-header">
+                <div class="sidebar-user">
+                    <div class="sidebar-user-avatar" id="sidebarUserAvatar">م</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name" id="sidebarUserName">المستخدم</div>
+                        <div class="sidebar-user-email" id="sidebarUserEmail">user@example.com</div>
                     </div>
-                    <div class="sidebar-item" data-section="pinned">
-                        <div class="sidebar-item-content">
-                            <i class='bx bx-pin'></i>
-                            <span>المثبتة</span>
-                        </div>
-                        <div class="sidebar-badge" id="pinnedCount">0</div>
+                </div>
+                <div class="sidebar-stats">
+                    <div class="sidebar-stat">
+                        <div class="sidebar-stat-value" id="sidebarTotalNotes">0</div>
+                        <div class="sidebar-stat-label">الملاحظات</div>
+                    </div>
+                    <div class="sidebar-stat">
+                        <div class="sidebar-stat-value" id="sidebarLockedNotes">0</div>
+                        <div class="sidebar-stat-label">محمية</div>
                     </div>
                 </div>
             </div>
             
             <div class="sidebar-section">
-                <div class="sidebar-title">التصنيفات</div>
+                <div class="sidebar-title">
+                    <iconify-icon icon="mdi:note-text-outline"></iconify-icon>
+                    الملاحظات
+                </div>
                 <div class="sidebar-items">
-                    <div class="sidebar-item" data-section="favorites">
+                    <div class="sidebar-item active" data-section="all" id="sidebarAll">
                         <div class="sidebar-item-content">
-                            <i class='bx bx-star'></i>
-                            <span>المفضلة</span>
+                            <iconify-icon icon="mdi:note-multiple-outline"></iconify-icon>
+                            <span>جميع الملاحظات</span>
                         </div>
-                        <div class="sidebar-badge" id="favoritesCount">0</div>
+                        <div class="sidebar-badge" id="allCount">0</div>
                     </div>
-                    <div class="sidebar-item" data-section="archive">
+                    <div class="sidebar-item" data-section="pinned" id="sidebarPinned">
                         <div class="sidebar-item-content">
-                            <i class='bx bx-archive'></i>
+                            <iconify-icon icon="mdi:pin-outline"></iconify-icon>
+                            <span>المثبتة</span>
+                        </div>
+                        <div class="sidebar-badge" id="pinnedCount">0</div>
+                    </div>
+                    <div class="sidebar-item" data-section="archive" id="sidebarArchive">
+                        <div class="sidebar-item-content">
+                            <iconify-icon icon="mdi:archive-outline"></iconify-icon>
                             <span>الأرشيف</span>
                         </div>
                         <div class="sidebar-badge" id="archiveCount">0</div>
                     </div>
-                    <div class="sidebar-item" data-section="trash">
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <iconify-icon icon="mdi:folder-outline"></iconify-icon>
+                    التصنيفات
+                </div>
+                <div class="sidebar-items">
+                    <div class="sidebar-item" data-section="favorites" id="sidebarFavorites">
                         <div class="sidebar-item-content">
-                            <i class='bx bx-trash'></i>
+                            <iconify-icon icon="mdi:star-outline"></iconify-icon>
+                            <span>المفضلة</span>
+                        </div>
+                        <div class="sidebar-badge" id="favoritesCount">0</div>
+                    </div>
+                    <div class="sidebar-item" data-section="trash" id="sidebarTrash">
+                        <div class="sidebar-item-content">
+                            <iconify-icon icon="mdi:delete-outline"></iconify-icon>
                             <span>سلة المهملات</span>
                         </div>
                         <div class="sidebar-badge" id="trashCount">0</div>
@@ -2050,23 +2363,13 @@
                 </div>
             </div>
             
-            <div class="sidebar-section">
-                <div class="sidebar-title">الإحصاءات</div>
-                <div class="sidebar-items">
-                    <div class="sidebar-item">
-                        <div class="sidebar-item-content">
-                            <i class='bx bx-file'></i>
-                            <span>إجمالي الملاحظات</span>
-                        </div>
-                        <div class="sidebar-badge" id="totalNotesSidebar">0</div>
+            <div class="sidebar-footer">
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="theme-toggle-label">
+                        <iconify-icon icon="mdi:theme-light-dark"></iconify-icon>
+                        <span>الوضع الليلي</span>
                     </div>
-                    <div class="sidebar-item">
-                        <div class="sidebar-item-content">
-                            <i class='bx bx-lock-alt'></i>
-                            <span>ملاحظات محمية</span>
-                        </div>
-                        <div class="sidebar-badge" id="lockedNotesCount">0</div>
-                    </div>
+                    <div class="theme-toggle-switch"></div>
                 </div>
             </div>
         </aside>
@@ -2077,15 +2380,19 @@
             <div class="welcome-banner" id="welcomeBanner">
                 <div class="welcome-content">
                     <h1 class="welcome-title" id="welcomeTitle">مرحباً، المستخدم!</h1>
-                    <p class="welcome-subtitle">إدارة ملاحظاتك الشخصية بشكل آمن وسريع</p>
+                    <p class="welcome-subtitle">إدارة ملاحظاتك الشخصية بشكل آمن وسريع مع Mini Notes</p>
                     <div class="welcome-stats">
                         <div class="welcome-stat">
-                            <i class='bx bx-notepad'></i>
+                            <iconify-icon icon="mdi:note-text-outline"></iconify-icon>
                             <span id="welcomeTotalNotes">0 ملاحظة</span>
                         </div>
                         <div class="welcome-stat">
-                            <i class='bx bx-lock-alt'></i>
+                            <iconify-icon icon="mdi:lock-outline"></iconify-icon>
                             <span id="welcomeLockedNotes">0 محمية</span>
+                        </div>
+                        <div class="welcome-stat">
+                            <iconify-icon icon="mdi:pin-outline"></iconify-icon>
+                            <span id="welcomePinnedNotes">0 مثبتة</span>
                         </div>
                     </div>
                 </div>
@@ -2095,16 +2402,20 @@
             <div class="tabs-container">
                 <div class="tabs-nav" id="tabsNav">
                     <button class="tab-btn active" data-tab="all">
-                        <i class='bx bx-notepad'></i>
+                        <iconify-icon icon="mdi:note-multiple-outline"></iconify-icon>
                         جميع الملاحظات
                     </button>
                     <button class="tab-btn" data-tab="favorites">
-                        <i class='bx bx-star'></i>
+                        <iconify-icon icon="mdi:star-outline"></iconify-icon>
                         المفضلة
                     </button>
                     <button class="tab-btn" data-tab="archive">
-                        <i class='bx bx-archive'></i>
+                        <iconify-icon icon="mdi:archive-outline"></iconify-icon>
                         الأرشيف
+                    </button>
+                    <button class="tab-btn" data-tab="trash">
+                        <iconify-icon icon="mdi:delete-outline"></iconify-icon>
+                        سلة المهملات
                     </button>
                 </div>
             </div>
@@ -2113,12 +2424,12 @@
             <div class="notes-grid" id="notesContainer">
                 <div class="empty-state" id="emptyState">
                     <div class="empty-state-icon">
-                        <i class='bx bx-note'></i>
+                        <iconify-icon icon="mdi:note-outline"></iconify-icon>
                     </div>
                     <h3 class="empty-state-title">لا توجد ملاحظات</h3>
                     <p class="empty-state-description">ابدأ بإضافة ملاحظة جديدة بالنقر على الزر الأسفل</p>
                     <button class="btn btn-primary" id="addFirstNoteBtn" style="margin-top: 1rem;">
-                        <i class='bx bx-plus'></i>
+                        <iconify-icon icon="mdi:plus"></iconify-icon>
                         إضافة أول ملاحظة
                     </button>
                 </div>
@@ -2129,7 +2440,7 @@
     <!-- Floating Action Button -->
     <div class="fab-container">
         <div class="fab" id="fabBtn">
-            <i class='bx bx-plus'></i>
+            <iconify-icon icon="mdi:plus"></iconify-icon>
             <span class="fab-tooltip">إضافة ملاحظة جديدة</span>
         </div>
     </div>
@@ -2140,7 +2451,7 @@
             <div class="modal-header">
                 <h3 class="modal-title" id="noteEditorTitle">ملاحظة جديدة</h3>
                 <div class="modal-close" id="closeNoteEditorBtn">
-                    <i class='bx bx-x'></i>
+                    <iconify-icon icon="mdi:close"></iconify-icon>
                 </div>
             </div>
             <div class="modal-body">
@@ -2148,20 +2459,26 @@
                     <textarea class="note-textarea" id="noteTextarea" placeholder="اكتب ملاحظتك هنا..."></textarea>
                     
                     <div class="editor-options">
-                        <div class="color-picker" id="noteColorOptions">
-                            <!-- Colors will be added dynamically -->
+                        <div>
+                            <label class="form-label">لون الملاحظة</label>
+                            <div class="color-picker" id="noteColorOptions">
+                                <!-- Colors will be added dynamically -->
+                            </div>
                         </div>
                         
-                        <div class="editor-actions">
-                            <button class="editor-action-btn" id="togglePinBtn" title="تثبيت">
-                                <i class='bx bx-pin'></i>
-                            </button>
-                            <button class="editor-action-btn" id="toggleFavoriteBtn" title="إضافة للمفضلة">
-                                <i class='bx bx-star'></i>
-                            </button>
-                            <button class="editor-action-btn" id="toggleLockBtn" title="قفل الملاحظة">
-                                <i class='bx bx-lock-alt'></i>
-                            </button>
+                        <div>
+                            <label class="form-label">الإجراءات</label>
+                            <div class="editor-actions">
+                                <button class="editor-action-btn" id="togglePinBtn" title="تثبيت">
+                                    <iconify-icon icon="mdi:pin-outline"></iconify-icon>
+                                </button>
+                                <button class="editor-action-btn" id="toggleFavoriteBtn" title="إضافة للمفضلة">
+                                    <iconify-icon icon="mdi:star-outline"></iconify-icon>
+                                </button>
+                                <button class="editor-action-btn" id="toggleLockBtn" title="قفل الملاحظة">
+                                    <iconify-icon icon="mdi:lock-outline"></iconify-icon>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     
@@ -2175,11 +2492,11 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" id="cancelNoteBtn">
-                    <i class='bx bx-x'></i>
+                    <iconify-icon icon="mdi:close"></iconify-icon>
                     إلغاء
                 </button>
                 <button class="btn btn-primary" id="saveNoteBtn">
-                    <i class='bx bx-save'></i>
+                    <iconify-icon icon="mdi:content-save-outline"></iconify-icon>
                     حفظ
                 </button>
             </div>
@@ -2192,7 +2509,7 @@
             <div class="modal-header">
                 <h3 class="modal-title">الإعدادات</h3>
                 <div class="modal-close" id="closeSettingsBtn">
-                    <i class='bx bx-x'></i>
+                    <iconify-icon icon="mdi:close"></iconify-icon>
                 </div>
             </div>
             <div class="modal-body">
@@ -2210,7 +2527,7 @@
                         <input type="text" class="form-input" id="usernameInput" placeholder="أدخل اسمك">
                     </div>
                     <button class="btn btn-primary btn-full" id="updateProfileBtn">
-                        <i class='bx bx-save'></i>
+                        <iconify-icon icon="mdi:content-save-outline"></iconify-icon>
                         تحديث الملف الشخصي
                     </button>
                 </div>
@@ -2230,7 +2547,7 @@
                         <input type="password" class="form-input" id="confirmPasswordInput" placeholder="أعد إدخال كلمة المرور الجديدة">
                     </div>
                     <button class="btn btn-primary btn-full" id="updatePasswordBtn">
-                        <i class='bx bx-key'></i>
+                        <iconify-icon icon="mdi:key-outline"></iconify-icon>
                         تغيير كلمة المرور
                     </button>
                 </div>
@@ -2251,7 +2568,7 @@
                         <input type="password" class="form-input" id="confirmNotesPasswordInput" placeholder="أعد إدخال كلمة مرور الملاحظات الجديدة">
                     </div>
                     <button class="btn btn-primary btn-full" id="updateNotesPasswordBtn">
-                        <i class='bx bx-lock-alt'></i>
+                        <iconify-icon icon="mdi:lock-outline"></iconify-icon>
                         تغيير كلمة مرور الملاحظات
                     </button>
                 </div>
@@ -2260,24 +2577,24 @@
                 <div class="settings-tab-content" id="dangerTab">
                     <div class="danger-zone">
                         <h4 class="danger-title">
-                            <i class='bx bx-trash'></i>
+                            <iconify-icon icon="mdi:delete-outline"></iconify-icon>
                             حذف جميع الملاحظات
                         </h4>
                         <p class="danger-text">هذا الإجراء سيحذف جميع ملاحظاتك بشكل دائم ولا يمكن التراجع عنه. سيتم حذف جميع الملاحظات بما فيها المحمية منها.</p>
                         <button class="btn btn-danger btn-full" id="deleteAllNotesBtn">
-                            <i class='bx bx-trash'></i>
+                            <iconify-icon icon="mdi:delete-outline"></iconify-icon>
                             حذف جميع الملاحظات
                         </button>
                     </div>
                     
                     <div class="danger-zone">
                         <h4 class="danger-title">
-                            <i class='bx bx-user-x'></i>
+                            <iconify-icon icon="mdi:account-remove-outline"></iconify-icon>
                             حذف الحساب
                         </h4>
                         <p class="danger-text">هذا الإجراء سيحذف حسابك وجميع ملاحظاتك بشكل دائم ولا يمكن التراجع عنه. سيتم حذف جميع البيانات المرتبطة بحسابك.</p>
                         <button class="btn btn-danger btn-full" id="deleteAccountBtn">
-                            <i class='bx bx-user-x'></i>
+                            <iconify-icon icon="mdi:account-remove-outline"></iconify-icon>
                             حذف الحساب
                         </button>
                     </div>
@@ -2297,7 +2614,7 @@
             reauthenticateWithCredential,
             EmailAuthProvider,
             deleteUser
-        } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
         
         import { 
             collection, 
@@ -2312,7 +2629,7 @@
             writeBatch,
             getDoc,
             setDoc
-        } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
         // DOM Elements
         const loadingScreen = document.getElementById('loadingScreen');
@@ -2330,6 +2647,7 @@
         const welcomeTitle = document.getElementById('welcomeTitle');
         const welcomeTotalNotes = document.getElementById('welcomeTotalNotes');
         const welcomeLockedNotes = document.getElementById('welcomeLockedNotes');
+        const welcomePinnedNotes = document.getElementById('welcomePinnedNotes');
         const addFirstNoteBtn = document.getElementById('addFirstNoteBtn');
         
         // Password Prompt
@@ -2339,13 +2657,24 @@
         const submitPasswordBtn = document.getElementById('submitPasswordBtn');
         
         // Stats elements
+        const sidebarUserAvatar = document.getElementById('sidebarUserAvatar');
+        const sidebarUserName = document.getElementById('sidebarUserName');
+        const sidebarUserEmail = document.getElementById('sidebarUserEmail');
+        const sidebarTotalNotes = document.getElementById('sidebarTotalNotes');
+        const sidebarLockedNotes = document.getElementById('sidebarLockedNotes');
         const allCount = document.getElementById('allCount');
         const pinnedCount = document.getElementById('pinnedCount');
         const favoritesCount = document.getElementById('favoritesCount');
         const archiveCount = document.getElementById('archiveCount');
         const trashCount = document.getElementById('trashCount');
-        const totalNotesSidebar = document.getElementById('totalNotesSidebar');
-        const lockedNotesCount = document.getElementById('lockedNotesCount');
+        
+        // Sidebar elements
+        const sidebarAll = document.getElementById('sidebarAll');
+        const sidebarPinned = document.getElementById('sidebarPinned');
+        const sidebarFavorites = document.getElementById('sidebarFavorites');
+        const sidebarArchive = document.getElementById('sidebarArchive');
+        const sidebarTrash = document.getElementById('sidebarTrash');
+        const themeToggle = document.getElementById('themeToggle');
         
         // Note Editor Modal
         const noteEditorModal = document.getElementById('noteEditorModal');
@@ -2384,7 +2713,7 @@
         let filteredNotes = [];
         let currentNoteId = null;
         let isEditing = false;
-        let noteColor = '#8b5cf6';
+        let noteColor = '#fbbf24'; // Default gold color
         let noteFont = 'var(--font-noto)';
         let notePinned = false;
         let noteFavorite = false;
@@ -2392,32 +2721,42 @@
         let userNotesPassword = '';
         let lockedNoteToOpen = null;
         
-        // Available colors for notes
+        // Available colors for notes (15 colors)
         const noteColors = [
-            { name: 'بنفسجي', value: '#8b5cf6', var: '--primary-500' },
-            { name: 'أزرق', value: '#3b82f6', var: '--info-500' },
-            { name: 'أخضر', value: '#10b981', var: '--secondary-500' },
-            { name: 'وردي', value: '#ec4899', var: '--pink-500' },
+            { name: 'ذهبي', value: '#fbbf24', var: '--gold-500' },
             { name: 'برتقالي', value: '#f97316', var: '--orange-500' },
-            { name: 'أصفر', value: '#f59e0b', var: '--warning-500' },
-            { name: 'أحمر', value: '#ef4444', var: '--danger-500' },
-            { name: 'سماوي', value: '#0ea5e9', var: '--sky-500' },
-            { name: 'ليموني', value: '#84cc16', var: '--lime-500' },
-            { name: 'بنفسجي فاتح', value: '#a855f7', var: '--purple-500' }
+            { name: 'أصفر', value: '#eab308', var: '--yellow-500' },
+            { name: 'كهرماني', value: '#f59e0b', var: '--amber-500' },
+            { name: 'وردي', value: '#ec4899', var: '--pink-500' },
+            { name: 'أحمر وردي', value: '#f43f5e', var: '--rose-500' },
+            { name: 'أزرق سماوي', value: '#0ea5e9', var: '--sky-500' },
+            { name: 'أزرق', value: '#3b82f6', var: '--blue-500' },
+            { name: 'أخضر زمردي', value: '#10b981', var: '--emerald-500' },
+            { name: 'أخضر', value: '#22c55e', var: '--green-500' },
+            { name: 'بنفسجي', value: '#8b5cf6', var: '--violet-500' },
+            { name: 'بنفسجي فاتح', value: '#a855f7', var: '--purple-500' },
+            { name: 'نيلي', value: '#6366f1', var: '--indigo-500' },
+            { name: 'سماوي', value: '#06b6d4', var: '--cyan-500' },
+            { name: 'ليموني', value: '#84cc16', var: '--lime-500' }
         ];
         
-        // Available fonts
+        // Available fonts (15 fonts - Arabic and English)
         const fonts = [
-            { name: 'Cairo', value: 'var(--font-cairo)' },
-            { name: 'Almarai', value: 'var(--font-almarai)' },
-            { name: 'Tajawal', value: 'var(--font-tajawal)' },
-            { name: 'El Messiri', value: 'var(--font-messiri)' },
-            { name: 'Changa', value: 'var(--font-changa)' },
-            { name: 'Scheherazade', value: 'var(--font-scheherazade)' },
-            { name: 'Noto Arabic', value: 'var(--font-noto)' },
-            { name: 'Amiri', value: 'var(--font-amiri)' },
-            { name: 'Lateef', value: 'var(--font-lateef)' },
-            { name: 'Mirza', value: 'var(--font-mirza)' }
+            { name: 'Cairo', value: 'var(--font-cairo)', type: 'arabic' },
+            { name: 'Almarai', value: 'var(--font-almarai)', type: 'arabic' },
+            { name: 'Tajawal', value: 'var(--font-tajawal)', type: 'arabic' },
+            { name: 'El Messiri', value: 'var(--font-messiri)', type: 'arabic' },
+            { name: 'Changa', value: 'var(--font-changa)', type: 'arabic' },
+            { name: 'Scheherazade', value: 'var(--font-scheherazade)', type: 'arabic' },
+            { name: 'Noto Arabic', value: 'var(--font-noto)', type: 'arabic' },
+            { name: 'Amiri', value: 'var(--font-amiri)', type: 'arabic' },
+            { name: 'Lateef', value: 'var(--font-lateef)', type: 'arabic' },
+            { name: 'Mirza', value: 'var(--font-mirza)', type: 'arabic' },
+            { name: 'Poppins', value: 'var(--font-poppins)', type: 'english' },
+            { name: 'Inter', value: 'var(--font-inter)', type: 'english' },
+            { name: 'Montserrat', value: 'var(--font-montserrat)', type: 'english' },
+            { name: 'Open Sans', value: 'var(--font-opensans)', type: 'english' },
+            { name: 'Roboto', value: 'var(--font-roboto)', type: 'english' }
         ];
         
         // Initialize RGB values for backdrop filter
@@ -2435,14 +2774,14 @@
         }
         
         // Initialize theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedTheme = localStorage.getItem('mini-notes-theme') || 'light';
         document.documentElement.dataset.theme = savedTheme;
         
         // Update theme icon
         function updateThemeIcon() {
             const currentTheme = document.documentElement.dataset.theme;
-            const icon = themeToggleBtn.querySelector('i');
-            icon.className = currentTheme === 'dark' ? 'bx bx-sun' : 'bx bx-moon';
+            const icon = themeToggleBtn.querySelector('iconify-icon');
+            icon.setAttribute('icon', currentTheme === 'dark' ? 'mdi:weather-sunny' : 'mdi:moon-waning-crescent');
         }
         
         // Show toast notification
@@ -2451,10 +2790,10 @@
             toast.className = `toast ${type}`;
             
             const icons = {
-                success: 'bx bx-check-circle',
-                error: 'bx bx-error-circle',
-                info: 'bx bx-info-circle',
-                warning: 'bx bx-error'
+                success: 'mdi:check-circle-outline',
+                error: 'mdi:alert-circle-outline',
+                info: 'mdi:information-outline',
+                warning: 'mdi:alert-outline'
             };
             
             const titles = {
@@ -2466,16 +2805,27 @@
             
             toast.innerHTML = `
                 <div class="toast-icon">
-                    <i class="${icons[type]}"></i>
+                    <iconify-icon icon="${icons[type]}"></iconify-icon>
                 </div>
                 <div class="toast-content">
                     <div class="toast-title">${title || titles[type]}</div>
                     <div class="toast-message">${message}</div>
                 </div>
-                <div class="toast-close" onclick="this.parentElement.remove()">
-                    <i class='bx bx-x'></i>
+                <div class="toast-close">
+                    <iconify-icon icon="mdi:close"></iconify-icon>
                 </div>
             `;
+            
+            const closeBtn = toast.querySelector('.toast-close');
+            closeBtn.addEventListener('click', () => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    if (toast.parentElement) {
+                        toast.remove();
+                    }
+                }, 300);
+            });
             
             toastContainer.appendChild(toast);
             
@@ -2483,7 +2833,7 @@
             setTimeout(() => {
                 if (toast.parentElement) {
                     toast.style.opacity = '0';
-                    toast.style.transform = 'translateX(-100%)';
+                    toast.style.transform = 'translateY(20px)';
                     setTimeout(() => {
                         if (toast.parentElement) {
                             toast.remove();
@@ -2499,7 +2849,7 @@
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
             document.documentElement.dataset.theme = newTheme;
-            localStorage.setItem('theme', newTheme);
+            localStorage.setItem('mini-notes-theme', newTheme);
             
             initializeRGBValues();
             updateThemeIcon();
@@ -2572,7 +2922,12 @@
         function encryptText(text, password) {
             if (!password) return text;
             // In a real app, use a proper encryption library like CryptoJS
-            return btoa(unescape(encodeURIComponent(text + '|' + password)));
+            try {
+                return btoa(unescape(encodeURIComponent(text + '|' + password)));
+            } catch (e) {
+                console.error('Encryption error:', e);
+                return null;
+            }
         }
         
         function decryptText(encryptedText, password) {
@@ -2585,6 +2940,7 @@
                 }
                 return null;
             } catch (e) {
+                console.error('Decryption error:', e);
                 return null;
             }
         }
@@ -2620,10 +2976,11 @@
             fontSelector.innerHTML = '';
             fonts.forEach(font => {
                 const fontOption = document.createElement('div');
-                fontOption.className = `font-option ${font.name.toLowerCase().replace(' ', '-')}`;
+                fontOption.className = `font-option ${font.name.toLowerCase().replace(/ /g, '-')}`;
                 fontOption.textContent = font.name;
                 fontOption.style.fontFamily = font.value;
                 fontOption.dataset.font = font.value;
+                fontOption.title = font.type === 'arabic' ? 'خط عربي' : 'English font';
                 
                 if (font.value === noteFont) {
                     fontOption.classList.add('active');
@@ -2660,7 +3017,7 @@
             if (note.locked) {
                 const lockBadge = document.createElement('div');
                 lockBadge.className = 'note-lock-badge';
-                lockBadge.innerHTML = '<i class="bx bx-lock-alt"></i> محمية';
+                lockBadge.innerHTML = '<iconify-icon icon="mdi:lock-outline"></iconify-icon> محمية';
                 noteHeader.appendChild(lockBadge);
             }
             noteCard.appendChild(noteHeader);
@@ -2671,11 +3028,12 @@
             noteContent.style.fontFamily = note.font || 'var(--font-noto)';
             
             if (note.locked) {
-                noteContent.textContent = '🔒 هذه الملاحظة محمية بكلمة مرور';
-                noteContent.style.textAlign = 'center';
-                noteContent.style.paddingTop = '40px';
-                noteContent.style.color = 'var(--text-secondary)';
-                noteContent.style.fontStyle = 'italic';
+                noteContent.innerHTML = `
+                    <div style="text-align: center; padding: 40px 0;">
+                        <iconify-icon icon="mdi:lock-outline" style="font-size: 48px; color: var(--gold-500);"></iconify-icon>
+                        <p style="margin-top: 16px; color: var(--text-secondary); font-style: italic;">هذه الملاحظة محمية بكلمة مرور</p>
+                    </div>
+                `;
             } else {
                 noteContent.textContent = note.text;
             }
@@ -2699,7 +3057,7 @@
             // Favorite button
             const favoriteBtn = document.createElement('button');
             favoriteBtn.className = `note-action-btn favorite ${note.favorite ? 'active' : ''}`;
-            favoriteBtn.innerHTML = '<i class="bx bx-star"></i>';
+            favoriteBtn.innerHTML = '<iconify-icon icon="mdi:star-outline"></iconify-icon>';
             favoriteBtn.title = note.favorite ? 'إزالة من المفضلة' : 'إضافة للمفضلة';
             favoriteBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -2709,7 +3067,7 @@
             // Pin button
             const pinBtn = document.createElement('button');
             pinBtn.className = `note-action-btn pin ${note.pinned ? 'active' : ''}`;
-            pinBtn.innerHTML = '<i class="bx bx-pin"></i>';
+            pinBtn.innerHTML = '<iconify-icon icon="mdi:pin-outline"></iconify-icon>';
             pinBtn.title = note.pinned ? 'إلغاء التثبيت' : 'تثبيت';
             pinBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -2719,7 +3077,7 @@
             // Lock button
             const lockBtn = document.createElement('button');
             lockBtn.className = `note-action-btn lock ${note.locked ? 'active' : ''}`;
-            lockBtn.innerHTML = '<i class="bx bx-lock-alt"></i>';
+            lockBtn.innerHTML = '<iconify-icon icon="mdi:lock-outline"></iconify-icon>';
             lockBtn.title = note.locked ? 'فتح الملاحظة' : 'قفل الملاحظة';
             lockBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -2734,14 +3092,33 @@
             // Delete button
             const deleteBtn = document.createElement('button');
             deleteBtn.className = 'note-action-btn delete';
-            deleteBtn.innerHTML = '<i class="bx bx-trash"></i>';
-            deleteBtn.title = 'حذف';
+            deleteBtn.innerHTML = '<iconify-icon icon="mdi:delete-outline"></iconify-icon>';
+            deleteBtn.title = note.deleted ? 'حذف نهائي' : 'حذف';
             deleteBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                if (confirm('هل أنت متأكد من حذف هذه الملاحظة؟')) {
-                    moveToTrash(note.id);
+                if (note.deleted) {
+                    if (confirm('هل أنت متأكد من حذف هذه الملاحظة نهائياً؟')) {
+                        deleteNotePermanently(note.id);
+                    }
+                } else {
+                    if (confirm('هل أنت متأكد من حذف هذه الملاحظة؟')) {
+                        moveToTrash(note.id);
+                    }
                 }
             });
+            
+            // Restore button for trashed notes
+            if (note.deleted) {
+                const restoreBtn = document.createElement('button');
+                restoreBtn.className = 'note-action-btn restore';
+                restoreBtn.innerHTML = '<iconify-icon icon="mdi:restore"></iconify-icon>';
+                restoreBtn.title = 'استعادة';
+                restoreBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    restoreFromTrash(note.id);
+                });
+                noteActions.appendChild(restoreBtn);
+            }
             
             noteActions.appendChild(favoriteBtn);
             noteActions.appendChild(pinBtn);
@@ -2755,7 +3132,7 @@
                 if (note.locked) {
                     lockedNoteToOpen = note;
                     showPasswordPrompt();
-                } else {
+                } else if (!note.deleted) {
                     openNoteEditor(note);
                 }
             });
@@ -2785,6 +3162,39 @@
             if (filteredNotes.length === 0) {
                 emptyState.style.display = 'block';
                 notesContainer.appendChild(emptyState);
+                
+                // Update empty state message based on current tab
+                const emptyIcon = emptyState.querySelector('.empty-state-icon');
+                const emptyTitle = emptyState.querySelector('.empty-state-title');
+                const emptyDesc = emptyState.querySelector('.empty-state-description');
+                const addBtn = emptyState.querySelector('#addFirstNoteBtn');
+                
+                switch(currentTab) {
+                    case 'all':
+                        emptyIcon.innerHTML = '<iconify-icon icon="mdi:note-outline"></iconify-icon>';
+                        emptyTitle.textContent = 'لا توجد ملاحظات';
+                        emptyDesc.textContent = 'ابدأ بإضافة ملاحظة جديدة بالنقر على الزر الأسفل';
+                        addBtn.style.display = 'block';
+                        break;
+                    case 'favorites':
+                        emptyIcon.innerHTML = '<iconify-icon icon="mdi:star-outline"></iconify-icon>';
+                        emptyTitle.textContent = 'لا توجد ملاحظات مفضلة';
+                        emptyDesc.textContent = 'لم تقم بإضافة أي ملاحظات إلى المفضلة بعد';
+                        addBtn.style.display = 'none';
+                        break;
+                    case 'archive':
+                        emptyIcon.innerHTML = '<iconify-icon icon="mdi:archive-outline"></iconify-icon>';
+                        emptyTitle.textContent = 'لا توجد ملاحظات مؤرشفة';
+                        emptyDesc.textContent = 'لم تقم بأرشفة أي ملاحظات بعد';
+                        addBtn.style.display = 'none';
+                        break;
+                    case 'trash':
+                        emptyIcon.innerHTML = '<iconify-icon icon="mdi:delete-outline"></iconify-icon>';
+                        emptyTitle.textContent = 'سلة المهملات فارغة';
+                        emptyDesc.textContent = 'لا توجد ملاحظات في سلة المهملات';
+                        addBtn.style.display = 'none';
+                        break;
+                }
                 return;
             }
             
@@ -2798,18 +3208,21 @@
         
         // Filter notes based on current tab and search
         function filterNotes() {
-            let result = notes.filter(note => !note.deleted);
+            let result = notes;
             
             // Filter by tab
             switch(currentTab) {
                 case 'all':
-                    result = result.filter(note => !note.archived);
+                    result = result.filter(note => !note.deleted && !note.archived);
                     break;
                 case 'favorites':
-                    result = result.filter(note => note.favorite && !note.archived);
+                    result = result.filter(note => note.favorite && !note.deleted && !note.archived);
                     break;
                 case 'archive':
-                    result = result.filter(note => note.archived);
+                    result = result.filter(note => note.archived && !note.deleted);
+                    break;
+                case 'trash':
+                    result = result.filter(note => note.deleted);
                     break;
             }
             
@@ -2817,7 +3230,7 @@
             const searchTerm = searchInput.value.toLowerCase();
             if (searchTerm) {
                 result = result.filter(note => {
-                    if (note.locked) return false;
+                    if (note.locked || note.deleted) return false;
                     return note.text.toLowerCase().includes(searchTerm);
                 });
             }
@@ -2851,12 +3264,14 @@
             archiveCount.textContent = archivedNotes.length;
             trashCount.textContent = trashedNotes.length;
             
-            totalNotesSidebar.textContent = allNotes.length;
-            lockedNotesCount.textContent = lockedNotes.length;
+            // Update sidebar stats
+            sidebarTotalNotes.textContent = allNotes.length;
+            sidebarLockedNotes.textContent = lockedNotes.length;
             
             // Update welcome banner
             welcomeTotalNotes.textContent = `${allNotes.length} ملاحظة`;
             welcomeLockedNotes.textContent = `${lockedNotes.length} محمية`;
+            welcomePinnedNotes.textContent = `${pinnedNotes.length} مثبتة`;
         }
         
         // Open note editor
@@ -2896,13 +3311,13 @@
             
             // Update action buttons
             togglePinBtn.classList.toggle('active', notePinned);
-            togglePinBtn.querySelector('i').className = notePinned ? 'bx bxs-pin' : 'bx bx-pin';
+            togglePinBtn.querySelector('iconify-icon').setAttribute('icon', notePinned ? 'mdi:pin' : 'mdi:pin-outline');
             
             toggleFavoriteBtn.classList.toggle('active', noteFavorite);
-            toggleFavoriteBtn.querySelector('i').className = noteFavorite ? 'bx bxs-star' : 'bx bx-star';
+            toggleFavoriteBtn.querySelector('iconify-icon').setAttribute('icon', noteFavorite ? 'mdi:star' : 'mdi:star-outline');
             
             toggleLockBtn.classList.toggle('active', noteLocked);
-            toggleLockBtn.querySelector('i').className = noteLocked ? 'bx bxs-lock-alt' : 'bx bx-lock-alt';
+            toggleLockBtn.querySelector('iconify-icon').setAttribute('icon', noteLocked ? 'mdi:lock' : 'mdi:lock-outline');
             
             // Show modal
             noteEditorModal.classList.add('active');
@@ -2928,7 +3343,12 @@
             
             try {
                 let processedText = text;
-                if (noteLocked && userNotesPassword) {
+                if (noteLocked) {
+                    if (!userNotesPassword) {
+                        showToast('يرجى تعيين كلمة مرور للملاحظات أولاً', 'warning', 'كلمة مرور مطلوبة');
+                        return;
+                    }
+                    
                     // Encrypt the text with user's notes password
                     processedText = encryptText(text, userNotesPassword);
                     if (!processedText) {
@@ -3035,8 +3455,15 @@
                     showToast('تم قفل الملاحظة بنجاح', 'success', 'تم القفل');
                 } else {
                     // Unlock the note
+                    const decryptedText = decryptText(note.text, userNotesPassword);
+                    if (!decryptedText) {
+                        showToast('حدث خطأ في فك تشفير الملاحظة', 'error', 'خطأ في فك التشفير');
+                        return;
+                    }
+                    
                     await updateDoc(noteRef, {
                         locked: false,
+                        text: decryptedText,
                         updatedAt: serverTimestamp()
                     });
                     
@@ -3066,10 +3493,73 @@
             }
         }
         
+        // Restore note from trash
+        async function restoreFromTrash(noteId) {
+            try {
+                const noteRef = doc(db, 'notes', noteId);
+                await updateDoc(noteRef, {
+                    deleted: false,
+                    updatedAt: serverTimestamp()
+                });
+                
+                showToast('تم استعادة الملاحظة بنجاح', 'success', 'تم الاستعادة');
+            } catch (error) {
+                console.error('Error restoring note:', error);
+                showToast('حدث خطأ أثناء استعادة الملاحظة', 'error', 'خطأ في الاستعادة');
+            }
+        }
+        
+        // Delete note permanently
+        async function deleteNotePermanently(noteId) {
+            try {
+                const noteRef = doc(db, 'notes', noteId);
+                await deleteDoc(noteRef);
+                
+                showToast('تم حذف الملاحظة نهائياً', 'success', 'تم الحذف');
+            } catch (error) {
+                console.error('Error deleting note:', error);
+                showToast('حدث خطأ أثناء حذف الملاحظة', 'error', 'خطأ في الحذف');
+            }
+        }
+        
+        // Archive note
+        async function archiveNote(noteId) {
+            try {
+                const noteRef = doc(db, 'notes', noteId);
+                await updateDoc(noteRef, {
+                    archived: true,
+                    pinned: false,
+                    updatedAt: serverTimestamp()
+                });
+                
+                showToast('تم أرشفة الملاحظة بنجاح', 'success', 'تم الأرشيف');
+            } catch (error) {
+                console.error('Error archiving note:', error);
+                showToast('حدث خطأ أثناء أرشفة الملاحظة', 'error', 'خطأ في الأرشيف');
+            }
+        }
+        
+        // Unarchive note
+        async function unarchiveNote(noteId) {
+            try {
+                const noteRef = doc(db, 'notes', noteId);
+                await updateDoc(noteRef, {
+                    archived: false,
+                    updatedAt: serverTimestamp()
+                });
+                
+                showToast('تم إلغاء أرشفة الملاحظة', 'success', 'تم الإلغاء');
+            } catch (error) {
+                console.error('Error unarchiving note:', error);
+                showToast('حدث خطأ أثناء إلغاء أرشفة الملاحظة', 'error', 'خطأ في الإلغاء');
+            }
+        }
+        
         // Open settings modal
         async function openSettingsModal() {
             if (currentUser) {
                 usernameInput.value = currentUser.displayName || '';
+                sidebarUserEmail.textContent = currentUser.email || 'user@example.com';
                 
                 // Set active tab to profile
                 settingsTabBtns.forEach(btn => btn.classList.remove('active'));
@@ -3110,6 +3600,8 @@
                 });
                 
                 userAvatar.textContent = username.charAt(0);
+                sidebarUserAvatar.textContent = username.charAt(0);
+                sidebarUserName.textContent = username;
                 welcomeTitle.textContent = `مرحباً، ${username}!`;
                 showToast('تم تحديث الملف الشخصي بنجاح', 'success', 'تم التحديث');
             } catch (error) {
@@ -3334,6 +3826,9 @@
                     currentUser = user;
                     const displayName = user.displayName || user.email.split('@')[0];
                     userAvatar.textContent = displayName.charAt(0);
+                    sidebarUserAvatar.textContent = displayName.charAt(0);
+                    sidebarUserName.textContent = displayName;
+                    sidebarUserEmail.textContent = user.email || 'user@example.com';
                     welcomeTitle.textContent = `مرحباً، ${displayName}!`;
                     
                     // Load user's notes password
@@ -3394,15 +3889,13 @@
                     // Update sidebar selection
                     document.querySelectorAll('.sidebar-item').forEach(item => {
                         item.classList.remove('active');
-                        if (item.dataset.section === currentTab || 
-                            (currentTab === 'all' && item.dataset.section === 'all')) {
+                        if (item.dataset.section === currentTab) {
                             item.classList.add('active');
                         }
                     });
                     
                     // Update current section
-                    currentSection = currentTab === 'archive' ? 'archive' : 
-                                   currentTab === 'favorites' ? 'favorites' : 'all';
+                    currentSection = currentTab;
                     
                     filterNotes();
                 });
@@ -3412,11 +3905,6 @@
             document.querySelectorAll('.sidebar-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const section = item.dataset.section;
-                    
-                    if (section === 'trash') {
-                        showToast('سيتم إضافة صفحة سلة المهملات قريباً', 'info', 'قريباً');
-                        return;
-                    }
                     
                     // Update sidebar
                     document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
@@ -3435,6 +3923,9 @@
                     filterNotes();
                 });
             });
+            
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
             
             // Search
             searchInput.addEventListener('input', filterNotes);
@@ -3501,21 +3992,21 @@
             togglePinBtn.addEventListener('click', () => {
                 notePinned = !notePinned;
                 togglePinBtn.classList.toggle('active', notePinned);
-                togglePinBtn.querySelector('i').className = notePinned ? 'bx bxs-pin' : 'bx bx-pin';
+                togglePinBtn.querySelector('iconify-icon').setAttribute('icon', notePinned ? 'mdi:pin' : 'mdi:pin-outline');
             });
             
             // Toggle favorite button
             toggleFavoriteBtn.addEventListener('click', () => {
                 noteFavorite = !noteFavorite;
                 toggleFavoriteBtn.classList.toggle('active', noteFavorite);
-                toggleFavoriteBtn.querySelector('i').className = noteFavorite ? 'bx bxs-star' : 'bx bx-star';
+                toggleFavoriteBtn.querySelector('iconify-icon').setAttribute('icon', noteFavorite ? 'mdi:star' : 'mdi:star-outline');
             });
             
             // Toggle lock button
             toggleLockBtn.addEventListener('click', () => {
                 noteLocked = !noteLocked;
                 toggleLockBtn.classList.toggle('active', noteLocked);
-                toggleLockBtn.querySelector('i').className = noteLocked ? 'bx bxs-lock-alt' : 'bx bx-lock-alt';
+                toggleLockBtn.querySelector('iconify-icon').setAttribute('icon', noteLocked ? 'mdi:lock' : 'mdi:lock-outline');
             });
             
             // Settings Modal
