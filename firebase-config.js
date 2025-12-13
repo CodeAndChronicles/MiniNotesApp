@@ -1,8 +1,9 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+// firebase-config.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
-export const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCOqwdTEjaPp_iTMia1t1IjS8fxSUQtnTY",
     authDomain: "mininotesapp-8b171.firebaseapp.com",
     projectId: "mininotesapp-8b171",
@@ -12,11 +13,8 @@ export const firebaseConfig = {
     measurementId: "G-4RXQ2H257S"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-// Initialize Firebase Authentication and get a reference to the service
-export const auth = getAuth(app);
-
-// Initialize Cloud Firestore and get a reference to the service
-export const db = getFirestore(app);
+export { auth, db };
